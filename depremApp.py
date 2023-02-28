@@ -1,18 +1,15 @@
-while (1):
-	import requests
-	import time
-	import json
-	url = "https://api.orhanaydogdu.com.tr/deprem/kandilli/live"
+import requests
+import time
+import json
+url = "https://api.orhanaydogdu.com.tr/deprem/kandilli/live"
 
-	payload = {}
-	headers = {}
+payload = {}
+headers = {}
 
+while(1):
 	response = requests.request("GET", url)
-
 	result = json.loads(response.text)
 
-
-	#print(result)
 	count = 0
 	print("{:<24} {:<39}  {:<12} {:<12}".format("Tarih", "Bölge", "Büyüklük", "Derinlik"))
 
